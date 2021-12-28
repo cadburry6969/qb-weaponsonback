@@ -1,5 +1,7 @@
-fx_version 'cerulean'
+fx_version 'bodacious'
 game 'gta5'
 
-shared_script 'config.lua'
-client_script 'client.lua'
+client_scripts {
+  'client.lua',
+  'config.lua'
+}
