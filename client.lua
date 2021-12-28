@@ -2,11 +2,11 @@ local attached_weapons = {}
 local slots = {}
 local sling = "Back"
 local QBCore = exports['qb-core']:GetCoreObject()
-local isLoggedIn = LocalPlayer.state['isLoggedIn']
+local isLoggedIn = LocalPlayer.state['isLoggedIn'] -- Comment this if you are on old version of qb-core
 
 Citizen.CreateThread(function()
   while true do
-    if isLoggedIn then
+    if isLoggedIn then -- Comment this if you are on old version of qb-core
         local me = PlayerPedId()
         local items = QBCore.Functions.GetPlayerData().items
         if items ~= nil then 
@@ -27,7 +27,7 @@ Citizen.CreateThread(function()
               end
           end
         end
-      end
+      end -- Comment this if you are on old version of qb-core
     Wait(500)
   end
 end)
