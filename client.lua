@@ -2,13 +2,17 @@ local attached_weapons = {}
 local slots = {}
 local sling = "Back"
 local QBCore = exports['qb-core']:GetCoreObject()
-local isLoggedIn = LocalPlayer.state['isLoggedIn'] -- Comment this if you are on old version of qb-core
+local PlayerData = nil
+
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()    
+    PlayerData = QBCore.Functions.GetPlayerData()
+end)
 
 Citizen.CreateThread(function()
   while true do
-    if isLoggedIn then -- Comment this if you are on old version of qb-core
+     if LocalPlayer.state.isLoggedIn then
         local me = PlayerPedId()
-        local items = QBCore.Functions.GetPlayerData().items
+        local items = PlayerData.items
         if items ~= nil then 
           slots = { items[1], items[2], items[3], items[4], items[5], items[6], items[7], items[8], items[9], items[10], items[11], items[12], items[13], items[14], items[15], items[16], items[17], items[18], items[19], items[20], items[21], items[22], items[23], items[24], items[25], items[26], items[27], items[28], items[29], items[30], items[31], items[32], items[33], items[34], items[35], items[36], items[37], items[38], items[39], items[40], items[41], items[42], items[43], items[44], items[45], items[46], items[47], items[48], items[49], items[50]}
           for slot, item in pairs(slots) do
@@ -27,7 +31,7 @@ Citizen.CreateThread(function()
               end
           end
         end
-      end -- Comment this if you are on old version of qb-core
+      end
     Wait(500)
   end
 end)
