@@ -1,5 +1,6 @@
 Config = {
-    Positions = {
+    Sling = "Back" -- \ Sling Type (Front/Back)
+    Positions = {  -- \ Sling Position (you can add multiple positions)
         ["Back"] = {
             bone = 24816,
             x = 0.2275,
@@ -19,9 +20,7 @@ Config = {
             z_rotation = 180.0
         }
     },
-
-
-    compatable_weapon_hashes = {
+    compatable_weapon_hashes = { -- \ weapons list for on-back (you can add more weapons in list)
         -- assault rifles:
         ["weapon_carbinerifle"] = { model = "w_ar_carbinerifle", hash = -2084633992},
         ["weapon_carbinerifle_mk2"] = { model = "w_ar_carbineriflemk2", hash = GetHashKey("WEAPON_CARBINERIFLE_MK2")},
