@@ -1,5 +1,5 @@
 Config = {
-    Sling = "Back" -- \ Sling Type (Front/Back)
+    Sling = "Back", -- \ Sling Type (Front/Back)
     Positions = {  -- \ Sling Position (you can add multiple positions)
         ["Back"] = {
             bone = 24816,
